@@ -1,0 +1,31 @@
+pipeline {
+  agent any
+
+  environment {
+    GIT_CRED_ID = 'SVC-JENKINS-ADM'
+
+  }
+
+  stages {
+    stage('Trigger based on branch changes') {
+      when {
+        expression { return env.BRANCH_NAME == 'a' || env.BRANCH_NAME == 'b' || env.BRANCH_NAME == 'c' }
+      }
+      steps {
+        script {
+          echo "Changes detected in branch ${env.BRANCH_NAME}"
+          echo "Current user is ${env.GIT_CRED_ID}"
+          
+          
+          if (env.BRANCH_NAME == 'a') {
+            // Perform actions for branch 'a'
+          } else if (env.BRANCH_NAME == 'b') {
+            // Perform actions for branch 'b'
+          } else if (env.BRANCH_NAME == 'c') {
+            // Perform actions for branch 'c'
+          }
+        }
+      }
+    }
+  }
+}
