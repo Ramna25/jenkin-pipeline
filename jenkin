@@ -13,7 +13,7 @@ pipeline {
       }
       steps {
         script {
-          echo "Changes detected in branch ${env.BRANCH_NAME}"
+          echo "Changes detected in branches ${env.BRANCH_NAME}"
           echo "Current user is ${env.GIT_CRED_ID}"
           
           
