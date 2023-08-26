@@ -1,8 +1,7 @@
 pipeline {
   agent any
 
-  environment {
-    GIT_CRED_ID = 'SVC-JENKINS-ADM'
+ 
 
   }
 
@@ -14,15 +13,15 @@ pipeline {
       steps {
         script {
           echo "Changes detected in branches ${env.BRANCH_NAME}"
-          echo "Current user is ${env.GIT_CRED_ID}"
+          
           
           
           if (env.BRANCH_NAME == 'a') {
-            // Perform actions for branch 'a'
+            echo "Changes in branch a"
           } else if (env.BRANCH_NAME == 'b') {
-            // Perform actions for branch 'b'
+               echo "Changes in branch b"
           } else if (env.BRANCH_NAME == 'c') {
-            // Perform actions for branch 'c'
+               echo "Changes in branch c"
           }
         }
       }
